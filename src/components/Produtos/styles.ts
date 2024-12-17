@@ -30,6 +30,7 @@ export const Item = styled.div`
     padding-top: 4px;
     padding-bottom: 4px;
     text-align: center;
+    cursor: pointer;
     a {
       color: ${Cores.VermelhoCoral};
       font-weight: 700;

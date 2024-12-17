@@ -1,7 +1,8 @@
 import styled from 'styled-components'
+import garfofaca from '../../assets/images/garfofaca.png'
 
 export const Header = styled.header`
-  background-image: url('public/garfofaca.png');
+  background-image: url(${garfofaca});
   background-size: cover;
 
   div {
@@ -16,6 +17,6 @@ export const Header = styled.header`
 
   img {
     width: 125px;
-    heigth: 57.5px;
+    height: 57.5px;
   }
 `

@@ -9,6 +9,7 @@ export const Listagem = styled.div`
 
 export const Items = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  justify-items: center;
 `

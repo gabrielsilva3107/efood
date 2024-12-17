@@ -5,9 +5,9 @@ import { Props } from '.'
 export const Restaurante = styled.div`
   background-color: ${Cores.Branco};
   border: 1px solid ${Cores.VermelhoCoral};
-  height: 398px;
+  height: 100%;
   width: 472px;
-  margin-bottom: 56px;
+  margin-bottom: 16px;
 `
 
 export const Botao = styled.button<Props>`
@@ -17,14 +17,13 @@ export const Botao = styled.button<Props>`
   font-size: ${(props) => (props.size === 'big' ? '14px' : '12px')};
   font-weight: 700;
   border: none;
-  margin-top: 12px;
-  margin-left: 5px;
   cursor: pointer;
+  margin-left: 8px;
 `
 
 export const Imagemrestaurante = styled.div<Props>`
   height: 217px;
-  width: 472px;
+  width: 100%;
   background-image: url(${(props) => props.image});
   background-size: cover;
   background-position: center;
@@ -50,7 +49,9 @@ export const Paragrafo = styled.p<Props>`
   font-weight: ${(props) => (props.size === 'big' ? '700' : '400')};
 
   p {
-    margin: 16px 8px 20px 8px;
+    margin-left: 8px;
+    margin-top: 16px;
+    margin-bottom: 16px;
   }
 `
 

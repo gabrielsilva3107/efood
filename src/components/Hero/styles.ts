@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { Cores } from '../../styles'
+import garfofaca from '../../assets/images/garfofaca.png'
 
 export const HeaderBar = styled.header`
   display: flex;
@@ -7,7 +8,7 @@ export const HeaderBar = styled.header`
   align-items: center;
   flex-direction: column;
   justify-content: space-between;
-  background-image: url('/garfofaca.png');
+  background-image: url(${garfofaca});
   background-size: cover;
 `
 export const Title = styled.h1`

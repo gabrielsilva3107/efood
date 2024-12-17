@@ -2,8 +2,8 @@ import styled from 'styled-components'
 import { Props } from '.'
 import { Cores } from '../../styles'
 
-export const Fundo = styled.div`
-  background-image: url('/public/macarraoescuro.png');
+export const Fundo = styled.div<Props>`
+  background-image: url(${(props) => props.imagem});
   background-position: center;
   height: 280px;
   background-size: cover;

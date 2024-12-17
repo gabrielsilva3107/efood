@@ -1,88 +1,46 @@
+import ItemProduto from '../ItemProduto'
 import { Container } from '../../styles'
-import { Item, Itens } from './styles'
-import pizza from '../../assets/images/pizza.png'
+import { Itens } from './styles'
 
-const Produtos = () => (
+export type Restaurante = {
+  id: number
+  titulo: string
+  destacado: boolean
+  tipo: string
+  avaliacao: number
+  descricao: string
+  capa: string
+  cardapio: [
+    {
+      foto: string
+      preco: number
+      id: number
+      nome: string
+      descricao: string
+      porcao: string
+    }
+  ]
+}
+type Props = {
+  cardapio: Restaurante[]
+}
+
+const Produtos = ({ cardapio }: Props) => (
   <Container>
     <Itens>
-      <div>
-        <Item>
-          <img src={pizza} alt="" />
-          <h1>Pizza Marguerita</h1>
-          <p>
-            A clássica Marguerita: molho de tomate suculento, mussarela
-            derretida, manjericão fresco e um toque de azeite. Sabor e
-            simplicidade!
-          </p>
-          <div>
-            <a>Adicionar ao Carrinho</a>
-          </div>
-        </Item>
-        <Item>
-          <img src={pizza} alt="" />
-          <h1>Pizza Marguerita</h1>
-          <p>
-            A clássica Marguerita: molho de tomate suculento, mussarela
-            derretida, manjericão fresco e um toque de azeite. Sabor e
-            simplicidade!
-          </p>
-          <div>
-            <a>Adicionar ao Carrinho</a>
-          </div>
-        </Item>
-      </div>
-      <div>
-        <Item>
-          <img src={pizza} alt="" />
-          <h1>Pizza Marguerita</h1>
-          <p>
-            A clássica Marguerita: molho de tomate suculento, mussarela
-            derretida, manjericão fresco e um toque de azeite. Sabor e
-            simplicidade!
-          </p>
-          <div>
-            <a>Adicionar ao Carrinho</a>
-          </div>
-        </Item>
-        <Item>
-          <img src={pizza} alt="" />
-          <h1>Pizza Marguerita</h1>
-          <p>
-            A clássica Marguerita: molho de tomate suculento, mussarela
-            derretida, manjericão fresco e um toque de azeite. Sabor e
-            simplicidade!
-          </p>
-          <div>
-            <a>Adicionar ao Carrinho</a>
-          </div>
-        </Item>
-      </div>
-      <div>
-        <Item>
-          <img src={pizza} alt="" />
-          <h1>Pizza Marguerita</h1>
-          <p>
-            A clássica Marguerita: molho de tomate suculento, mussarela
-            derretida, manjericão fresco e um toque de azeite. Sabor e
-            simplicidade!
-          </p>
-          <div>
-            <a>Adicionar ao Carrinho</a>
-          </div>
-        </Item>
-        <Item>
-          <img src={pizza} alt="" />
-          <h1>Pizza Marguerita</h1>
-          <p>
-            A clássica Marguerita: molho de tomate suculento, mussarela
-            derretida, manjericão fresco e um toque de azeite. Sabor e
-            simplicidade!
-          </p>
-          <div>
-            <a>Adicionar ao Carrinho</a>
-          </div>
-        </Item>
-      </div>
+      {cardapio.map((restaurante) =>
+        restaurante.cardapio.map((produto) => (
+          <ItemProduto
+            key={produto.id}
+            id={produto.id}
+            imagem={produto.foto}
+            nome={produto.nome}
+            descricao={produto.descricao}
+            preco={produto.preco}
+            porcao={produto.porcao}
+          />
+        ))
+      )}
     </Itens>
   </Container>
 )
