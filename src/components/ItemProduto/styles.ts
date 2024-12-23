@@ -117,18 +117,18 @@ export const ContainerModal = styled.div`
 
   .adicionar {
     background-color: ${Cores.CremePessego};
-    width: 218px;
+    max-width: 218px;
     height: 24px;
     display: flex;
     align-items: center;
     justify-content: center;
-
     border: none;
     cursor: pointer;
     text-align: center;
     text-decoration: none;
     font-size: 14px;
     font-weight: bold;
+    padding: 4px 7px;
     color: ${Cores.VermelhoCoral};
   }
 `

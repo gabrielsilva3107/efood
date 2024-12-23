@@ -7,7 +7,6 @@ import {
   Paragrafo,
   Restaurante
 } from './styles'
-
 import estrela from '../../assets/images/estrela.png'
 
 export type Props = {
@@ -36,10 +35,10 @@ const Restaurantes = ({ nome, nota, descricao, image, id }: Props) => (
     </Imagemrestaurante>
     <Descricao>
       <div className="restaurante_nota">
-        <Fragmento size="big">{nome}</Fragmento>
+        <Fragmento size="big">{nome} </Fragmento>
         <Nota>
           <Fragmento size="big">{nota}</Fragmento>
-          <img src={estrela} />
+          <img src={estrela} alt="" />
         </Nota>
       </div>
       <Fragmento>

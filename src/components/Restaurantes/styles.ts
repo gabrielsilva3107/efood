@@ -7,7 +7,7 @@ export const Restaurante = styled.div`
   border: 1px solid ${Cores.VermelhoCoral};
   height: 100%;
   width: 472px;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
 `
 
 export const Botao = styled.button<Props>`
