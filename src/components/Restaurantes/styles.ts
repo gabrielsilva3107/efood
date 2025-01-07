@@ -5,12 +5,12 @@ import { Props } from '.'
 export const Restaurante = styled.div`
   background-color: ${Cores.Branco};
   border: 1px solid ${Cores.VermelhoCoral};
-  height: 100%;
+  height: 398px;
   width: 472px;
-  margin-bottom: 8px;
+  margin-bottom: 56px;
 `
 
-export const Botao = styled.button<Props>`
+export const Botao = styled.div<Props>`
   background-color: ${Cores.VermelhoCoral};
   color: ${Cores.CremePessego};
   padding: 8px 6px;
@@ -18,24 +18,34 @@ export const Botao = styled.button<Props>`
   font-weight: 700;
   border: none;
   cursor: pointer;
-  margin-left: 8px;
+  margin-left: 6px;
+
+  text-decoration: none;
+  height: 24px;
+  width: 82px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `
 
 export const Imagemrestaurante = styled.div<Props>`
   height: 217px;
-  width: 100%;
+  width: 472px;
   background-image: url(${(props) => props.image});
   background-size: cover;
   background-position: center;
 
   .botoes_imagem_restaurante {
     padding: 16px;
-    display: flex;
-    justify-content: flex-end;
   }
 `
 
 export const Descricao = styled.div`
+  height: 181px;
+  width: 472px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   .restaurante_nota {
     display: flex;
     justify-content: space-between;
@@ -49,9 +59,7 @@ export const Paragrafo = styled.p<Props>`
   font-weight: ${(props) => (props.size === 'big' ? '700' : '400')};
 
   p {
-    margin-left: 8px;
-    margin-top: 16px;
-    margin-bottom: 16px;
+    margin: 16px 8px 8px;
   }
 `
 

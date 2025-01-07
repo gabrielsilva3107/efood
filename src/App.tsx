@@ -5,6 +5,9 @@ import { GlobalCss } from './styles'
 import { BrowserRouter } from 'react-router-dom'
 import { store } from './store'
 import Cart from './components/cart'
+import Entrega from './components/Entrega'
+import Pagamento from './components/Pagamento'
+import Confirmacao from './components/Confirmacao'
 
 function App() {
   return (
@@ -13,6 +16,9 @@ function App() {
         <GlobalCss></GlobalCss>
         <Rotas />
         <Cart />
+        <Entrega />
+        <Pagamento />
+        <Confirmacao />
       </BrowserRouter>
     </Provider>
   )

@@ -13,12 +13,14 @@ export const Item = styled.div`
   background-color: ${Cores.VermelhoCoral};
   padding-bottom: 1px;
   margin-bottom: 30px;
+
   h1 {
     color: ${Cores.CremePessego};
     font-weight: 700;
     font-size: 16px;
     margin: 8px;
   }
+
   p {
     color: ${Cores.CremePessego};
     margin: 8px;
@@ -31,11 +33,13 @@ export const Item = styled.div`
     padding-bottom: 4px;
     text-align: center;
     cursor: pointer;
+
     a {
       color: ${Cores.VermelhoCoral};
       font-weight: 700;
     }
   }
+
   img {
     width: 304px;
     height: 167px;

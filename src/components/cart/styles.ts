@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { Cores } from '../../styles'
-import lixeiro from '../../assets/images/lixeira.png'
+import lixeira from '../../assets/images/lixeira.png'
 
 export const Overlay = styled.div`
   position: absolute;
@@ -45,7 +45,7 @@ export const Valores = styled.div`
   color: ${Cores.CremePessego};
 `
 
-export const Button = styled.div`
+export const Button = styled.button`
   background-color: ${Cores.CremePessego};
   color: ${Cores.VermelhoCoral};
   width: 344px;
@@ -86,7 +86,7 @@ export const CartItem = styled.li`
   }
 
   button {
-    background-image: url(${lixeiro});
+    background-image: url(${lixeira});
     width: 16px;
     height: 16px;
     border: none;

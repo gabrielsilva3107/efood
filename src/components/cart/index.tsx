@@ -9,13 +9,12 @@ import {
 
 import { useDispatch, useSelector } from 'react-redux'
 import { RootReducer } from '../../store'
-import { close, remove } from '../../store/reducers/cart'
-import { formataPreco } from '../ItemProduto'
+import { close, remove, openEntrega } from '../../store/reducers/cart'
 
 const Cart = () => {
   const { isOpen, items } = useSelector((state: RootReducer) => state.cart)
   const dispatch = useDispatch()
-
+  const abrindoEntrega = () => (dispatch(openEntrega()), dispatch(close()))
   const closeCart = () => {
     dispatch(close())
   }
@@ -33,7 +32,7 @@ const Cart = () => {
             : 0)
         )
       }, 0)
-      .toFixed(2)
+      .toLocaleString('pt-BR', { minimumFractionDigits: 2 })
   }
 
   const removeItem = (id: number) => {
@@ -51,7 +50,12 @@ const Cart = () => {
                 <img src={produto.foto} alt={produto.nome} />
                 <div>
                   <h3>{produto.nome}</h3>
-                  <span>{formataPreco(produto.preco || 0)}</span>
+                  <span>
+                    R${' '}
+                    {produto.preco.toLocaleString('pt-BR', {
+                      minimumFractionDigits: 2
+                    })}
+                  </span>
                 </div>
                 <button
                   onClick={() => removeItem(item.id)}
@@ -65,7 +69,14 @@ const Cart = () => {
           <p>Valor total</p>
           <p>R$ {getTotalPrice()}</p>
         </Valores>
-        <Button>Continuar com a entrega</Button>
+        {items.length === 0 && (
+          <small style={{ color: 'red', fontWeight: 'bold' }}>
+            Adicione pelo menos um item ao carrinho para continuar.
+          </small>
+        )}
+        <Button onClick={abrindoEntrega} disabled={items.length === 0}>
+          Continuar com a entrega
+        </Button>
       </Sidebar>
     </CartContainer>
   )
